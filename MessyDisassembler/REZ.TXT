@@ -1,0 +1,50 @@
+
+0000 F6 20                     MUL   [BX + SI]
+0002 F6 E6                     MUL   DH       
+0004 F6 27                     MUL   [BX]     
+0006 F6 63 50                  MUL   [BP+DI+  50] 
+0009 F6 A7 00 50               MUL   [BX +    5000] 
+000D 26 F7 63 50               MUL   ES:[BP+DI+  50] 
+0011 F7 A7 00 50               MUL   [BX +    5000] 
+0015 F7 E2                     MUL   DX       
+0017 F6 EC                     IMUL  AH       
+0019 F6 EA                     IMUL  DL       
+001B F6 2B                     IMUL  [BP + DI]
+001D F6 2F                     IMUL  [BX]     
+001F F7 6B 50                  IMUL  [BP+DI+  50] 
+0022 F7 AF 00 50               IMUL  [BX +    5000] 
+0026 F7 E9                     IMUL  CX       
+0028 F7 EA                     IMUL  DX       
+002A D0 E0                     SHL   AL        {1}   
+002C D1 E0                     SHL   AX        {1}   
+002E D0 25                     SHL   [DI]      {1}   
+0030 D1 27                     SHL   [BX]      {1}   
+0032 B9                        ????  
+0033 05                        ????  
+0034 00                        ????  
+0035 D2 E0                     SHL   AL        {CL}  
+0037 D3 E0                     SHL   AX        {CL}  
+0039 2E D2 25                  SHL   CS:[DI]      {CL}  
+003C 26 D3 27                  SHL   ES:[BX]      {CL}  
+003F D2 A5 80 56               SHL   [DI +    5680]  {CL}  
+0043 D3 67 68                  SHL   [BX +    68]  {CL}  
+0046 0C 05                     OR    AL       , 05
+0048 0D 82 64                  OR    AX       , 6482
+004B 80 48 50                  OR    [BX+SI+  50] , E5
+004F 26 09 06 81 00            OR    ES:0081, AX       
+0054 36 08 17                  OR    SS:[BX]     , DL       
+0057 3E 08 93 25 50            OR    DS:[BP+DI+  5025] , DL       
+005C 0B 80 51 78               OR    AX       , [BX+SI+  7851] 
+0060 36 08 06 81 00            OR    SS:0081, AL       
+0065 9C                        PUSHF 
+0066 F8                        CLC   
+0067 F9                        STC   
+0068 F5                        CMC   
+0069 FC                        CLD   
+006A FD                        STD   
+006B FA                        CLI   
+006C C2 01 01                  RET   0101
+006F CA 01 01                  RETF  0101
+0072 C3                        RET   
+0073 CB                        RETF  
+0074 9D                        POPF  
